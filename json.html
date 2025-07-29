@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>JSON example</title>
+    </head>
+    <body>
+        <script>
+            const x = `{"name": "Sham", "age":22, "date": {"day": 1, "month": 1, "year": 2003}}`;
+
+            console.log(x);
+
+            const y = JSON.parse(x);
+
+            console.log(y.name);
+            console.log(y.age);
+            console.log(y.date.year);
+
+            const z = {
+                from: "USD",
+                to: "EGP",
+                amount: 12.5
+            };
+
+            console.log(z);
+
+            a = JSON.stringify(z);
+
+            console.log(a);
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>AJAX example</title>
+        <style>
+            .output {
+                color:red;
+                font-size: 28px;
+            }
+        </style>
+        <script>
+            function getData() {
+                var url = "http://goweather.xyz/weather/" + document.getElementById("city").value;
+
+                console.log(url);
+
+                fetch(url)
+                    .then(response => response.text())
+                    .then(text => {
+                        console.log(text);
+                        data = JSON.parse(text);
+                        document.getElementById("t").innerText = data.temperature;
+                        document.getElementById("d").innerText = data.description;
+                    });
+            }
+        </script>
+    </head>
+    <body>
+        City: <input type="text" id="city"/>
+        <button onClick="getData()">Get Weather!</button>
+        <p>
+            Temperature: <span id="t" class="output">##</span><br/>
+            Description: <span id="d" class="output">xx</span>
+        </p>
+
+    </body>
+</html>
